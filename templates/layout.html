@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    {% block head %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+ 
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <!-- Bootstrap core CSS-->
+    <link href="{{url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+
+    <!-- Custom fonts for this template--> 
+    <link href="{{url_for('static', filename='vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
+
+    <!-- Page level plugin CSS--> 
+    <link href="{{url_for('static', filename='vendor/datatables/dataTables.bootstrap4.css')}}" rel="stylesheet">
+
+    <!-- Custom styles for this template--> 
+    <link href="{{url_for('static', filename='css/sb-admin.css')}}" rel="stylesheet">
+
+    <!-- icon -->
+   <link rel="shortcut icon"   type="image/png"   href="/static/image/mi.png">
+
+   <!-- <link rel='shortcut icon' type='image/x-icon' href='/static/image/Favicon.ico' /> -->
+
+   <!-- RELOAD PAGE -->
+   <script> 
+     function confirmRefresh() {
+        var okToRefresh = confirm("Do you really want to refresh the page?");
+        if (okToRefresh)
+          {
+              setTimeout("location.reload(true);",1500);
+          }
+        }
+    </script>
+
+    <title>{% block title %}{% endblock %}  - Xử Lý Ảnh </title> 
+
+     {% endblock %}
+  </head>
+
+  <body id="page-top" > 
+
+    <div id="wrapper">
+
+      <!-- Sidebar --> 
+      <ul class="sidebar navbar-nav " > 
+        <<!-- button  class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#" >
+            <i class="fas fa-bars"></i> 
+             </button> -->
+          <li class="nav-item active">
+          <a class="nav-link" href="{{ url_for('index')}}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Home</span> 
+          </a>
+          </li> 
+
+
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ url_for('handwriting')}}">
+            <i class="fas fa-sort-numeric-down"></i>
+            <span>Number Handwriting</span> 
+          </a>
+        </li> 
+
+        <li class="nav-item "> 
+          <a class="nav-link" href="{{url_for('selfie')}}">
+            <i class="fas fa-portrait"></i>
+            <span>Selfie</span>
+          </a> 
+        </li>
+
+        <li class="nav-item "> 
+          <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-info-circle"></i> 
+            <span>Describle</span>
+          </a> 
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Table Use</span></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Tables</span></a>
+        </li>
+        <li class="nav-item"> 
+          <a class="nav-link" href="#">
+            <i class="fa fa-adjust"></i>
+            <span>Pre Processing</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="fas fa-cogs"></i>
+            <span>Convert Values</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="fa fa-anchor"></i>
+            <span>Classification</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:confirmRefresh();">
+            <i></i>
+            <span>Reload </span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i ></i>
+            <span> </span></a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i ></i>
+            <span> </span></a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i ></i>
+            <span> </span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i ></i>
+            <span> </span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i ></i>
+            <span> </span></a>
+        </li> 
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i ></i>
+            <span> </span></a>
+        </li> 
+
+          >
+      </ul> 
+
+      <!-- content-wrapper -->
+      <div id="content-wrapper">
+  
+        <div class="container-fluid">
+              {% block content  %}
+              {% endblock %}
+        </div>
+        <!-- /.container-fluid -->
+
+        <!-- Sticky Footer --> 
+        <!-- <footer class="sticky-footer" style="height: 50px; background-color: #018c3f ">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+               <span  style=" font-weight: bold;  color: white; font-size: 15px">Copyright © HELEN</span>
+            </div>
+          </div>
+        </footer>  -->
+      </div> 
+
+    </div> 
+ <!-- Bootstrap core JavaScript-->
+    <script src="{{url_for('static',filename = 'vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{url_for('static',filename = 'vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="{{url_for('static',filename = 'vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+
+    <!-- Page level plugin JavaScript-->
+    <script src="{{url_for('static',filename = 'vendor/chart.js/Chart.min.js')}}"></script>
+    <script src="{{url_for('static',filename = 'vendor/datatables/jquery.dataTables.js')}}"></script>
+    <script src="{{url_for('static',filename = 'vendor/datatables/dataTables.bootstrap4.js')}}"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="{{url_for('static',filename = 'js/sb-admin.min.js')}}"></script>
+
+    <!-- Demo scripts for this page-->
+    <script src="{{url_for('static',filename = 'js/demo/datatables-demo.js')}}"></script>
+    <script src="{{url_for('static',filename = 'js/demo/chart-area-demo.js')}}"></script>
+    <script>
+
+    $("#file-picker").change(function(){
+
+        var input = document.getElementById('file-picker');
+
+        for (var i=0; i<input.files.length; i++)
+        {
+        //koala.jpg, koala.JPG substring(index) lastIndexOf('a') koala.1.jpg
+            var ext= input.files[i].name.substring(input.files[i].name.lastIndexOf('.')+1).toLowerCase()
+
+            if ((ext == 'jpg') || (ext == 'png') || (ext == 'csv'))
+            {
+                $("#msg").text("Files are supported")
+            }
+            else
+            {
+                $("#msg").text("Files are NOT supported")
+                document.getElementById("file-picker").value ="";
+            }
+
+        }
+
+    } );
+
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light-bootstrap/all.min.css" />
+    <script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+
+    <script type="text/javascript">
+        jQuery(function ($) {
+        $("#files").shieldUpload();
+    });
+</script>
+  </body>
+
+</html>

@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block title %}Home {% endblock %}
+{% block head %}
+  {{ super() }} 
+{% endblock %}
+ 
+{% block content  %}
+ 
+<h1 style="text-align: center; font-size: 30px;">Phân Loại Ảnh Selfie</h1>
+
+<img src="{{ url_image }}"   style="border-style: solid;  border-color: gray;   display: block; margin-left: auto; margin-right: auto; width: 250px; height: 250px; "  >
+ <div class="container">
+     <div class="col-md-4"></div>
+         <div style="margin: auto;  width: 50%; /* border: 3px solid green;*/  padding: 10px;  " class="col-md-4">
+             <form  method="post" enctype="multipart/form-data" action="{{ url_for('upload')}}
+             ">
+
+                    <div style="display: inline-block;">
+                        <input type="text" name="image_url"  placeholder="Image URL" style="display: inline-block; width: 335px;"><br>
+                        <br>
+                    </div>
+                      
+
+                    
+                        <input type="file"  name="file" multiple="multiple"  style="border: 1px solid gray; width: 335px" enctype=multipart/form-data />
+
+                        <input type="submit" value="Upload Files" class="btn btn-lg btn-primary" id="upload-button" style="height: 35px; width: 110px; font-size: 15px; display: inline-block; position: absolute;top: 130px; right: 190px; " />
+                        
+            </form>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+
+<form  method="post" enctype="multipart/form-data" action="{{ url_for('predict_selfie')}}
+             ">
+             <input type="submit" value="Predict" class="btn btn-lg btn-primary" id="upload-button" style="height: 35px; width: 110px; font-size: 15px; display: inline-block; position: absolute;top: 442px; right: 440px; " />
+         </form>
+<h1 style="height: 35px; width: 110px; font-size: 50px; display: inline-block; position: absolute;top: 500px; right: 500px; ">{{result_predict_selfie}}</h1>
+{% endblock %}
